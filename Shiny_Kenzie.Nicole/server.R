@@ -16,7 +16,7 @@ shinyServer(function(input, output) {
    
   output$distPlot <- renderPlot({
     tomato %>%
-      ggplot(aes(x=trait1, y=trait2, color=species))+
+      ggplot(aes_string(x=input$trait1, y=input$trait2, color="species"))+
       scale_color_manual(values=c("firebrick1", "orange1", "olivedrab1", "blue","darkorchid"))+
       geom_point()
   })
