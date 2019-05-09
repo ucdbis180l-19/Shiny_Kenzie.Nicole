@@ -10,23 +10,23 @@
 library(shiny)
 
 shinyUI(fluidPage(
-  titlePanel("Tomato Data"),
+  titlePanel("Tomato Data Distinguished by Species"),
+  helpText("This application shows how different variables vary by species."),
   sidebarLayout(
     sidebarPanel(
       radioButtons("trait1",
                  "Choose a trait to display:",
-                 c("petleng",
+                 c("Petal Length"="petleng",
                    "leafleng",
                    "leafwid",
                    "leafnum",
-                   "ndvi"))),
-    sidebarPanel(
-      radioButtons("trait2",
+                   "ndvi")),
+    radioButtons("trait2",
                    "Choose a trait to display:",
                    c("hyp",
                      "int1",
                      "int2",
                      "int3",
-                     "int4")),
+                     "int4"))),
   mainPanel(
-    plotOutput("distPlot"))))))
+    plotOutput("distPlot")))))
