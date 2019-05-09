@@ -8,19 +8,17 @@
 #
 
 library(shiny)
-
+library(tidyverse)
 # Define server logic required to draw a histogram
+
+tomato <- read_csv("./Tomato.csv")
 shinyServer(function(input, output) {
    
   output$distPlot <- renderPlot({
-    
-    # generate bins based on input$bins from ui.R
-    x    <- faithful[, 2] 
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
-    
-    # draw the histogram with the specified number of bins
-    hist(x, breaks = bins, col = 'darkgray', border = 'white')
-    
+    tomato %>%
+      ggplot(aes(x=trait1, y=trait2, color=species))+
+      scale_color_manual(values=c("firebrick1", "orange1", "olivedrab1", "blue","darkorchid"))+
+      geom_point()
   })
   
 })
