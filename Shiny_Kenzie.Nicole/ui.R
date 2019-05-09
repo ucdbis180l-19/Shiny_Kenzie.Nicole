@@ -13,13 +13,13 @@ shinyUI(fluidPage(
   titlePanel("Tomato Data"),
   sidebarLayout(
     sidebarPanel(
-      c(radioButtons("trait1",
+      radioButtons("trait1",
                  "Choose a trait to display:",
                  c("petleng",
                    "leafleng",
                    "leafwid",
                    "leafnum",
-                   "ndvi"))),
+                   "ndvi")),
       radioButtons("trait2",
                    "Choose a trait to display:",
                    c("hyp",
