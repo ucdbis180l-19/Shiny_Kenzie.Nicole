@@ -17,6 +17,7 @@ shinyUI(fluidPage(
       radioButtons("trait1",
                  "Choose a trait to display:",
                  c("Petal Length"="petleng",
+<<<<<<< HEAD
                    "leafleng",
                    "leafwid",
                    "leafnum",
@@ -28,5 +29,18 @@ shinyUI(fluidPage(
                      "int2",
                      "int3",
                      "int4"))),
+=======
+                   "Leaf Length"="leafleng",
+                   "Leaf Width"="leafwid",
+                   "Leaf Number"="leafnum",
+                   "NDVI"="ndvi")),
+      radioButtons("trait2",
+                   "Choose a trait to display:",
+                   c("Hypocotal Length"="hyp",
+                     "Internode Length 1"="int1",
+                     "Internode Length 2"="int2",
+                     "Internode Length 3"="int3",
+                     "Internode Length 4"="int4"))),
+>>>>>>> 510f8715df1be35501ef6300a65e75a598bcd262
   mainPanel(
     plotOutput("distPlot")))))
