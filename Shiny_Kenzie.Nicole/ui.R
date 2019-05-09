@@ -9,31 +9,24 @@
 
 library(shiny)
 
-# Define UI for application that draws a histogram
 shinyUI(fluidPage(
-  
-  # Application title
   titlePanel("Tomato Data"),
-  
-  # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-      radiobuttons("trait1",
+      radioButtons("trait1",
+                 "Choose a trait to display:",
+                 c("petleng",
+                   "leafleng",
+                   "leafwid",
+                   "leafnum",
+                   "ndvi"))),
+    sidebarPanel(
+      radioButtons("trait2",
                    "Choose a trait to display:",
                    c("hyp",
                      "int1",
                      "int2",
                      "int3",
-                     "int4")))),
-    sidebarPanel(
-       radiobuttons("trait2",
-                   "Choose a trait to display:", 
-                   c("petleng",
-                     "leafleng",
-                     "leafwid",
-                     "leafnum",
-                     "ndvi"))),
-    
-    # Show a plot of the generated distribution
-    mainPanel(
-       plotOutput("distplot"))))
+                     "int4")),
+  mainPanel(
+    plotOutput("distPlot"))))))
