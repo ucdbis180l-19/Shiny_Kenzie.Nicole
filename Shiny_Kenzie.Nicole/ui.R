@@ -22,10 +22,10 @@ shinyUI(fluidPage(
                    "NDVI"="ndvi")),
       radioButtons("trait2",
                    "Choose a trait to display:",
-                   c("hyp",
-                     "int1",
-                     "int2",
-                     "int3",
-                     "int4"))),
+                   c("Hypocotal Length"="hyp",
+                     "Internode Length 1"="int1",
+                     "Internode Length 2"="int2",
+                     "Internode Length 3"="int3",
+                     "Internode Length 4"="int4"))),
   mainPanel(
     plotOutput("distPlot")))))
