@@ -11,7 +11,7 @@ library(shiny)
 
 shinyUI(fluidPage(
   titlePanel("Tomato Data Distinguished by Species"),
-  helpText("This application shows how different tomato plant traits vary by species."),
+  helpText("This application shows the relation between two different tomato plant traits and how those vary by species."),
   sidebarLayout(
     sidebarPanel(
       radioButtons("trait1",
