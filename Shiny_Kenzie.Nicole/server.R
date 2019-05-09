@@ -18,6 +18,7 @@ shinyServer(function(input, output) {
     tomato %>%
       ggplot(aes_string(x=input$trait1, y=input$trait2, color="species"))+
       scale_color_manual(values=c("firebrick1", "orange1", "olivedrab1", "blue","darkorchid"))+
+      ggtitle(paste(input$trait1, "as a function of", input$trait2))+
       geom_point()
   })
   
