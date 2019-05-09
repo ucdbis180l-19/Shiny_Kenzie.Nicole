@@ -11,29 +11,14 @@ library(shiny)
 
 shinyUI(fluidPage(
   titlePanel("Tomato Data Distinguished by Species"),
-  helpText("This application shows how different variables vary by species."),
+  helpText("This application shows how different tomato plant traits vary by species."),
   sidebarLayout(
     sidebarPanel(
       radioButtons("trait1",
                  "Choose a trait to display:",
                  c("Petal Length"="petleng",
-<<<<<<< HEAD
-                   "leafleng",
-                   "leafwid",
-                   "leafnum",
-                   "ndvi")),
-    radioButtons("trait2",
-                   "Choose a trait to display:",
-                   c("hyp",
-                     "int1",
-                     "int2",
-                     "int3",
-                     "int4"))),
-=======
                    "Leaf Length"="leafleng",
-                   "Leaf Width"="leafwid",
-                   "Leaf Number"="leafnum",
-                   "NDVI"="ndvi")),
+                   "Leaf Width"="leafwid")),
       radioButtons("trait2",
                    "Choose a trait to display:",
                    c("Hypocotal Length"="hyp",
@@ -41,6 +26,5 @@ shinyUI(fluidPage(
                      "Internode Length 2"="int2",
                      "Internode Length 3"="int3",
                      "Internode Length 4"="int4"))),
->>>>>>> 510f8715df1be35501ef6300a65e75a598bcd262
   mainPanel(
     plotOutput("distPlot")))))
